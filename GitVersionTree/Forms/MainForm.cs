@@ -295,7 +295,7 @@ namespace GitVersionTree
 
             StringBuilder DotStringBuilder = new StringBuilder();
             Status("Generating dot file ...");
-            DotStringBuilder.Append("strict digraph " + RepositoryName + " {\r\n");
+            DotStringBuilder.Append("strict digraph \"" + RepositoryName + "\" {\r\n");
             //DotStringBuilder.Append("  splines=line;\r\n");
             for (int i = 0; i < Nodes.Count; i++)
             {
