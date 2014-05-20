@@ -77,11 +77,11 @@ Latest release:
 Compile on Linux
 --------
 
-sudo apt-get install mono-devel graphviz
-git clone https://github.com/srix/GitVersionTree.git
-cd GitVersionTree
-xbuild /p:Configuration=Release
-GitVersionTree/bin/Release/GitVersionTree.exe
+    sudo apt-get install mono-devel graphviz
+    git clone https://github.com/srix/GitVersionTree.git
+    cd GitVersionTree
+    xbuild /p:Configuration=Release
+    GitVersionTree/bin/Release/GitVersionTree.exe
 
 Changelog
 ---------
