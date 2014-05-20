@@ -73,6 +73,16 @@ Download
 Latest release:
 [v1.0](https://github.com/crc8/GitVersionTree/releases)
 
+
+Compile on Linux
+--------
+
+sudo apt-get install mono-devel graphviz
+git clone https://github.com/srix/GitVersionTree.git
+cd GitVersionTree
+xbuild /p:Configuration=Release
+GitVersionTree/bin/Release/GitVersionTree.exe
+
 Changelog
 ---------
 
