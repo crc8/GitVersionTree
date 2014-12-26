@@ -16,7 +16,7 @@ namespace GitVersionTree
     {
         private Dictionary<string, string> DecorateDictionary = new Dictionary<string, string>();
         private List<List<string>> Nodes = new List<List<string>>();
-        
+
         private string DotFilename = Directory.GetParent(Application.ExecutablePath) + @"\" + Application.ProductName + ".dot";
         private string PdfFilename = Directory.GetParent(Application.ExecutablePath) + @"\" + Application.ProductName + ".pdf";
         private string LogFilename = Directory.GetParent(Application.ExecutablePath) + @"\" + Application.ProductName + ".log";
@@ -108,7 +108,7 @@ namespace GitVersionTree
         {
             Process.Start("https://github.com/crc8/GitVersionTree");
         }
-        
+
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Close();
@@ -323,7 +323,7 @@ namespace GitVersionTree
                 DotStringBuilder.Append("  subgraph Decorate" + DecorateCount + "\r\n");
                 DotStringBuilder.Append("  {\r\n");
                 DotStringBuilder.Append("    rank=\"same\";\r\n");
-                if (DecorateKeyValuePair.Value.Trim().Substring(0, 5) == "(tag:")
+                if (DecorateKeyValuePair.Value.Trim().StartsWith("(tag:"))
                 {
                     DotStringBuilder.Append("    \"" + DecorateKeyValuePair.Value.Trim() + "\" [shape=\"box\", style=\"filled\", fillcolor=\"#ffffdd\"];\r\n");
                 }
