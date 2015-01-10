@@ -344,18 +344,18 @@ namespace GitVersionTree
             DotProcess.StartInfo.CreateNoWindow = true;
             DotProcess.StartInfo.RedirectStandardOutput = true;
             DotProcess.StartInfo.FileName = GraphvizDotPathTextBox.Text;
-            DotProcess.StartInfo.Arguments = "\"" + @DotFilename + "\" -Tpdf -Gsize=10,10 -o\"" + @PdfFilename + "\"";
+            DotProcess.StartInfo.Arguments = "\"" + @DotFilename + "\" -Tpdf -o\"" + @PdfFilename + "\"";
             DotProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             DotProcess.Start();
             DotProcess.WaitForExit();
 
-            DotProcess.StartInfo.Arguments = "\"" + @DotFilename + "\" -Tps -o\"" + @PdfFilename.Replace(".pdf", ".ps") + "\"";
-            DotProcess.Start();
-            DotProcess.WaitForExit();
-            if (DotProcess.ExitCode == 0)
-            {
-                if (File.Exists(@PdfFilename))
-                {
+            //DotProcess.StartInfo.Arguments = "\"" + @DotFilename + "\" -Tps -o\"" + @PdfFilename.Replace(".pdf", ".ps") + "\"";
+            //DotProcess.Start();
+            //DotProcess.WaitForExit();
+            //if (DotProcess.ExitCode == 0)
+            //{
+                //if (File.Exists(@PdfFilename))
+                //{
 #if (!DEBUG)
                     /*
                     Process ViewPdfProcess = new Process();
@@ -365,12 +365,12 @@ namespace GitVersionTree
                     //Close();
                     */
 #endif
-                }
-            }
-            else
-            {
-                Status("Version tree generation failed ...");
-            }
+                //}
+            //}
+            //else
+            //{
+                //Status("Version tree generation failed ...");
+            //}
 
             Status("Done! ...");
         }
